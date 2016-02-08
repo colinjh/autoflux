@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project 3</title>
+  <link href="css/jquery-gauge.css" rel="stylesheet">
+</head>
+<body>
+<h1>Light Sensor Reading</h1>
+
+
+<h3>AIN1 = <span id="ain1" class="initialValue"></span></h3>
+<p>State: <span id="state"></span></p>
+<p>Kelvins: <span id="kelvin"></span></p>
+<p>Hue: <span id="hue"></span></p>
+<p>Sensor Brightness: <span id="brightness"></span></p>
+<p>Lifx Brightness: <span id="lifxbrightness"></span></p>
+
+
+<div class="container A">
+  <svg class="typeRange" height="165" width="330" view-box="0 0 330 165">
+
+    <g class="scale" stroke="red"></g>
+
+    <path class="outline" d="" />
+    <path class="fill" d="" />
+    <polygon class="needle" points="220,10 300,210 220,250 140,210" />
+  </svg>
+  <div class="output">30</div>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/lifx.js"></script>
+<!-- <script src="js/bonescript.js"></script>
+<script src="js/beaglebone.js"></script>
+<script src="js/guage.js"></script> -->
+</body>
+</html>
