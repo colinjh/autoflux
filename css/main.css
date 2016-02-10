@@ -1,0 +1,26 @@
+body {
+  background-color: #1D1D1D;*/
+  /*zcolor: white;*/
+}
+li {
+  list-style-type: none;
+  color: white;
+}
+.grid {
+  border-style: solid;
+  border-color: black;
+  background-color: #7500B9;
+}
+li#state {
+  background-color: #007F2E;
+}
+span#lifxstate {
+  position: relative;
+  text-align: center;
+}
+#mode {
+  background-color: yellow;
+}
+#mode.auto {
+  background-color: red;
+}

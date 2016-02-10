@@ -3,21 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <title>Project 3</title>
-  <link href="css/jquery-gauge.css" rel="stylesheet">
+<!--   <link href="css/jquery-gauge.css" rel="stylesheet">
+ -->  <link rel="stylesheet" href="css/jquery.gridster.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<h1>Light Sensor Reading</h1>
+<div class="gridster">
+    <ul>
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1" class='grid auto' id='mode'>Mode<span id='lifxmode'>Automatic</span></li>
+        <li data-row="2" data-col="1" data-sizex="1" data-sizey="1" class='grid' id='state'>State<span id='lifxstate'></span></li>
+        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1" class='grid' id='kelvin'>Kelvins<span id="lifxkelvin"></span></li>
+
+        <li data-row="1" data-col="2" data-sizex="2" data-sizey="1" class='grid'>Hue</li>
+        <li data-row="2" data-col="2" data-sizex="2" data-sizey="2" class='grid'>Lifx Brightness</li>
+
+        <li data-row="1" data-col="4" data-sizex="1" data-sizey="1" class='grid'>Test</li>
+        <li data-row="2" data-col="4" data-sizex="2" data-sizey="1" class='grid'></li>
+        <li data-row="3" data-col="4" data-sizex="1" data-sizey="1" class='grid'></li>
+
+        <li data-row="1" data-col="5" data-sizex="1" data-sizey="1" class='grid'></li>
+        <li data-row="3" data-col="5" data-sizex="1" data-sizey="1" class='grid'></li>
+
+        <li data-row="1" data-col="6" data-sizex="1" data-sizey="1" class='grid'></li>
+        <li data-row="2" data-col="6" data-sizex="2" data-sizey="2" class='grid'></li>
+    </ul>
+</div>
 
 
 <h3>AIN1 = <span id="ain1" class="initialValue"></span></h3>
 <p>State: <span id="state"></span></p>
-<p>Kelvins: <span id="kelvin"></span></p>
+<p>Kelvins: <span id="lifxkelvin"></span></p>
 <p>Hue: <span id="hue"></span></p>
 <p>Sensor Brightness: <span id="brightness"></span></p>
 <p>Lifx Brightness: <span id="lifxbrightness"></span></p>
 
 
-<div class="container A">
+<!-- <div class="container A">
   <svg class="typeRange" height="165" width="330" view-box="0 0 330 165">
 
     <g class="scale" stroke="red"></g>
@@ -27,13 +48,14 @@
     <polygon class="needle" points="220,10 300,210 220,250 140,210" />
   </svg>
   <div class="output">30</div>
-</div>
+</div> -->
 
 
 <script src="js/jquery.min.js"></script>
+<script src="js/jquery.gridster.min.js"></script>
 <script src="js/lifx.js"></script>
-<!-- <script src="js/bonescript.js"></script>
+<script src="js/bonescript.js"></script>
 <script src="js/beaglebone.js"></script>
-<script src="js/guage.js"></script> -->
+<!-- <script src="js/guage.js"></script> -->
 </body>
 </html>

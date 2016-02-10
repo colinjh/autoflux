@@ -28,8 +28,8 @@ function run() {
     function onRead(x) {
         try {
             brightness = Math.abs((x.value - 1)*100);
-            display = x.value;
-            sensor_reading = display.toFixed(8)
+            display = ((x.value - 0.15))*100  ;
+            sensor_reading =display.toFixed(5)
             // console.log(sensor_reading);
             $('#ain1').html(sensor_reading);
             $("#brightness").html(brightness);
@@ -39,7 +39,7 @@ function run() {
         // index++;
         if (index > 6) {
             index = 0;
-            setTimeout(doRead, 300);
+            setTimeout(doRead, 1000);
         } else {
             doRead();
         }
