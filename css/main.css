@@ -27,6 +27,9 @@ li {
 li#state {
   background-color: #007F2E;
 }
+#state.modeOn {
+  background-color: #C4E428;
+}
 li#kelvin {
   background-color: #B00013;
 }

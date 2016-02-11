@@ -23,26 +23,7 @@ var toggleState = function(selector){
   }).always(function (data ) {
     var response = JSON.parse(data.responseText);
     console.log(response);
-    setTimeout(lightStatus('all'), 1000);
-  });
-};
-
-var lightStatus = function(selector) {
-  $.ajax('https://api.lifx.com/v1/lights/all/', {
-    type: 'GET',
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": "Bearer c1ae1d5656a66e325185d9053223b6a0ec2212638a6ff84b52c720d976b9b565",
-    },
-    dataType: 'application/json',
-  }).always(function (data ) {
-    var response = JSON.parse(data.responseText);
-    lifxState = response[0];
-    $('#lifxstate').html(lifxState.power);
-    $('#lifxkelvin').html(lifxState.color.kelvin);
-    $('#hue').html(lifxState.color.hue.toFixed(3));
-    $('#lifxbrightness').html(lifxState.brightness);
-    console.log(response);
+    setTimeout(function() {lightStatus('all');}, 1000);
   });
 };
 
@@ -61,9 +42,36 @@ var lightStatus = function(selector) {
     $('#lifxkelvin').html(lifxState.color.kelvin);
     $('#hue').html(lifxState.color.hue.toFixed(3));
     $('#lifxbrightness').html(lifxState.brightness.toFixed(2));
+    if (lifxState.power === "on") {
+    console.log('modeon')
+      $('#state').addClass('modeOn')
+    }else if(lifxState.power === "off") {
+      $('#state').removeClass('modeOn')
+    }
     console.log(response);
   });
 };
+
+
+
+// var lightStatus = function(selector) {
+//   $.ajax('https://api.lifx.com/v1/lights/all/', {
+//     type: 'GET',
+//     headers: {
+//       "Content-Type": "application/json",
+//       "Authorization": "Bearer c1ae1d5656a66e325185d9053223b6a0ec2212638a6ff84b52c720d976b9b565",
+//     },
+//     dataType: 'application/json',
+//   }).always(function (data ) {
+//     var response = JSON.parse(data.responseText);
+//     lifxState = response[0];
+//     $('#lifxstate').html((lifxState.power).toUpperCase());
+//     $('#lifxkelvin').html(lifxState.color.kelvin);
+//     $('#hue').html(lifxState.color.hue.toFixed(3));
+//     $('#lifxbrightness').html(lifxState.brightness.toFixed(2));
+//     console.log(response);
+//   });
+// };
 
 var setKelvin = function(color){
   $.ajax('https://api.lifx.com/v1/lights/all/state', {
