@@ -5,54 +5,69 @@
   <title>Project 3</title>
 <!--   <link href="css/jquery-gauge.css" rel="stylesheet">
  -->  <link rel="stylesheet" href="css/jquery.gridster.css">
+ <link rel="stylesheet" href="css/clockpicker.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+<h1>Autoflux</h1>
 <div class="gridster">
     <ul>
-        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1" class='grid auto' id='mode'>Mode<span id='lifxmode'>Automatic</span></li>
-        <li data-row="2" data-col="1" data-sizex="1" data-sizey="1" class='grid' id='state'>State<span id='lifxstate'></span></li>
-        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1" class='grid' id='kelvin'>Kelvins<span id="lifxkelvin"></span></li>
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1" class='grid auto' id='mode'>Mode <div id='span'><span id='lifxmode'>Automatic</span></div></li>
+        <li data-row="2" data-col="1" data-sizex="1" data-sizey="1" class='grid' id='state'>State<div class="span"><span id='lifxstate'></span></div></li>
+        <li data-row="1" data-col="6" data-sizex="1" data-sizey="1" class='grid' id='kelvin'>Kelvins<div class="span"><span id="lifxkelvin"></span></div></li>
 
-        <li data-row="1" data-col="2" data-sizex="2" data-sizey="1" class='grid'>Hue</li>
-        <li data-row="2" data-col="2" data-sizex="2" data-sizey="2" class='grid'>Lifx Brightness</li>
+        <li data-row="3" data-col="6" data-sizex="1" data-sizey="1" class='grid' id='demo'>Demo Mode</li>
+        <li data-row="2" data-col="6" data-sizex="1" data-sizey="1" class='grid' id='bright'>Lifx Brightness
+        <div class="span"><span id='lifxbrightness'></span></div>
+        </li>
 
-        <li data-row="1" data-col="4" data-sizex="1" data-sizey="1" class='grid'>Test</li>
-        <li data-row="2" data-col="4" data-sizex="2" data-sizey="1" class='grid'></li>
-        <li data-row="3" data-col="4" data-sizex="1" data-sizey="1" class='grid'></li>
+        <!-- <li data-row="1" data-col="3" data-sizex="1" data-sizey="1" class='grid'>1</li> -->
+        <!-- <li data-row="4" data-col="1" data-sizex="1" data-sizey="1" class='grid'>2</li> -->
+        <!-- <li data-row="3" data-col="3" data-sizex="1" data-sizey="1" class='grid'>3</li> -->
 
-        <li data-row="1" data-col="5" data-sizex="1" data-sizey="1" class='grid'></li>
-        <li data-row="3" data-col="5" data-sizex="1" data-sizey="1" class='grid'></li>
 
-        <li data-row="1" data-col="6" data-sizex="1" data-sizey="1" class='grid'></li>
-        <li data-row="2" data-col="6" data-sizex="2" data-sizey="2" class='grid'></li>
+        <!-- <li data-row="3" data-col="4" data-sizex="1" data-sizey="1" class='grid'>6</li> -->
+
+        <li data-row="4" data-col="4" data-sizex="1" data-sizey="1" class='grid'>Finish Work
+        <div class="time">
+            <input id="time3" type="text" value="18:00">
+          </div>
+        </li>
+        <li data-row="5" data-col="5" data-sizex="1" data-sizey="1" class='grid'>Sleep Time
+          <div class="time">
+            <input id="time4" type="text" value="23:00">
+          </div>
+        </li>
+
+        <li data-row="4" data-col="2" data-sizex="1" data-sizey="1" class='grid'>Wake Up Time
+          <div class="time">
+            <input id="time1" type="text" value="6:00">
+          </div>
+        </li>
+        <!-- <li data-row="4" data-col="2" data-sizex="1" data-sizey="1" class='grid'>18</li> -->
+        <li data-row="4" data-col="3" data-sizex="1" data-sizey="1" class='grid'>Work Start
+          <div class="time">
+            <input id="time2" type="text" value="9:00">
+          </div>
+        </li>
+        </li>
+        <li data-row="1" data-col="2" data-sizex="1" data-sizey="1" class='grid light' id='ul' data='2500'>Ultra Warm</li>
+        <li data-row="1" data-col="3" data-sizex="1" data-sizey="1" class='grid light' id='warm' data='3000'>Warm</li>
+        <li data-row="1" data-col="4" data-sizex="1" data-sizey="1" class='grid light' id='neutral' data='3500'>Neutral</li>
+        <li data-row="1" data-col="5" data-sizex="1" data-sizey="1" class='grid light' id='cool' data='4000'>Cool</li>
+        <li data-row="2" data-col="2" data-sizex="1" data-sizey="1" class='grid light' id='cd' data='4500'>Cool Daylight</li>
+        <li data-row="2" data-col="3" data-sizex="1" data-sizey="1" class='grid light' id='sd' data='5000'>Soft Daylight</li>
+        <li data-row="2" data-col="4" data-sizex="1" data-sizey="1" class='grid light' id='bd' data='7000'>Blue Daylight</li>
+        <li data-row="3" data-col="5" data-sizex="1" data-sizey="1" class='grid light' id='bi' data='9000'>Blue Ice</li>
     </ul>
 </div>
 
-
-<h3>AIN1 = <span id="ain1" class="initialValue"></span></h3>
-<p>State: <span id="state"></span></p>
-<p>Kelvins: <span id="lifxkelvin"></span></p>
-<p>Hue: <span id="hue"></span></p>
-<p>Sensor Brightness: <span id="brightness"></span></p>
-<p>Lifx Brightness: <span id="lifxbrightness"></span></p>
-
-
-<!-- <div class="container A">
-  <svg class="typeRange" height="165" width="330" view-box="0 0 330 165">
-
-    <g class="scale" stroke="red"></g>
-
-    <path class="outline" d="" />
-    <path class="fill" d="" />
-    <polygon class="needle" points="220,10 300,210 220,250 140,210" />
-  </svg>
-  <div class="output">30</div>
-</div> -->
-
-
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.gridster.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/clockpicker.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/time.js"></script>
 <script src="js/lifx.js"></script>
 <script src="js/bonescript.js"></script>
 <script src="js/beaglebone.js"></script>

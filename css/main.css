@@ -1,10 +1,23 @@
 body {
-  background-color: #1D1D1D;*/
+  background-color: #1D1D1D;
   /*zcolor: white;*/
 }
-li {
-  list-style-type: none;
+h1{
   color: white;
+  font-family: courier;
+  text-align: center;
+}
+ul {
+  line-height: 1em;
+}
+li {
+  font-family: Avenir;
+  list-style-type: none;
+  color: black;
+  line-height: 3em;
+  text-align: left;
+  /*margin-left: 1em;*/
+  padding-left: 1em;
 }
 .grid {
   border-style: solid;
@@ -14,13 +27,68 @@ li {
 li#state {
   background-color: #007F2E;
 }
+li#kelvin {
+  background-color: #B00013;
+}
+li#bright {
+  background-color: #0090F7;
+}
+li#demo {
+  background-color: #FF5B00
+}
+/*div#span {
+  text-align: center;
+}
+}*/
 span#lifxstate {
+  padding-top: 20px;
   position: relative;
   text-align: center;
 }
 #mode {
-  background-color: yellow;
+  background-color: #FF5B00;
 }
 #mode.auto {
-  background-color: red;
+  background-color: #FC0059;
+}
+/*.input[type="text"] {
+  border: none;
+  border-bottom: solid 2px #c9c9c9;
+  transition: border 0.3s;
+}
+.input[type="text"]:focus,
+.input[type="text"].focus {
+  border-bottom: solid 2px #969696;
+}*/
+
+.popover {
+  z-index: 2;
+  position: absolute;
+}
+.popover-content {
+  background-color: #7500B9 !important;
+}
+#ul{
+  background-color: rgb(215,160,94);
+}
+#warm{
+  background-color: rgb(232,208,149);
+}
+#neutral{
+  background-color: rgb(246,238,172);
+}
+#cool{
+  background-color: rgb(252,249,209);
+}
+#cd{
+  background-color: rgb(255,255,229);
+}
+#sd{
+  background-color: rgb(255,255,255);
+}
+#bd{
+  background-color: rgb(202,233,254);
+}
+#bi{
+  background-color: rgb(180,212,253)
 }
