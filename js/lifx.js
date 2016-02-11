@@ -53,27 +53,6 @@ var lightStatus = function(selector) {
   });
 };
 
-
-
-// var lightStatus = function(selector) {
-//   $.ajax('https://api.lifx.com/v1/lights/all/', {
-//     type: 'GET',
-//     headers: {
-//       "Content-Type": "application/json",
-//       "Authorization": "Bearer c1ae1d5656a66e325185d9053223b6a0ec2212638a6ff84b52c720d976b9b565",
-//     },
-//     dataType: 'application/json',
-//   }).always(function (data ) {
-//     var response = JSON.parse(data.responseText);
-//     lifxState = response[0];
-//     $('#lifxstate').html((lifxState.power).toUpperCase());
-//     $('#lifxkelvin').html(lifxState.color.kelvin);
-//     $('#hue').html(lifxState.color.hue.toFixed(3));
-//     $('#lifxbrightness').html(lifxState.brightness.toFixed(2));
-//     console.log(response);
-//   });
-// };
-
 var setKelvin = function(color){
   $.ajax('https://api.lifx.com/v1/lights/all/state', {
     type: 'PUT',
@@ -122,6 +101,7 @@ var setAlarm = function(power, bri, dur, color){
     lightStatus('all');
   });
 };
+
 var wakeupAlarm = function() {
   console.log(wakeup);
   setTimeout(function () { setAlarm('on', 0.3, 60, 'kelvin:3000'); }, wakeup);
@@ -183,8 +163,8 @@ $(document).ready(function () {
     demo();
   })
 
-  // $('#kelvin').on('click', function() {
-  //   gridster.add_widget("<li class='grid light' id='2500'>Ultra Warm</li>",1,1,2,1);
+  $('#demo').on('click', function() {
+        gridster.add_widget("<li class='grid' id='democlock'><div class='clock'><div class='top'></div><div class='right'></div><div class='bottom'></div><div class='left'></div><div class='center'></div><div class='shadow'></div><div class='hour'></div><div class='minute'></div><div class='second'></div></div></li>",2,2,1,1);
   //   gridster.add_widget("<li class='grid light' id='3000'>Warm</li>",1,1,3,1);
   //   gridster.add_widget("<li class='grid light' id='3500'>Neutral</li>",1,1,2,2);
   //   gridster.add_widget("<li class='grid light' id='4000'>Cool</li>",1,1,3,2);
@@ -193,7 +173,7 @@ $(document).ready(function () {
   //   gridster.add_widget("<li class='grid light' id='7000'>Blue Daylight</li>",1,1,2,4);
   //   gridster.add_widget("<li class='grid light' id='9000'>Blue Ice</li>",1,1,3,4);
 
-  // });
+  });
 
   $('.gridster').on('click', '.grid.light', function() {
     var light = $(this).attr('data');
@@ -235,4 +215,5 @@ var demo = function(){
   setTimeout(function () { setAlarm('on', 0.3, 10, 'kelvin:7000'); automation = true; console.log('day'); }, 15000);
   setTimeout(function () { setAlarm('on', 0.1, 10, 'kelvin:3000'); automation = false; console.log('night'); }, 25000);
   setTimeout(function () { setAlarm('off', 0.1, 10, 'kelvin:3000'); automation = false; console.log('sleep') }, 45000);
+  setTimeout(function () {location.reload();}, 50000)
 };
