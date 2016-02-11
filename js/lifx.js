@@ -42,6 +42,7 @@ var lightStatus = function(selector) {
     $('#lifxkelvin').html(lifxState.color.kelvin);
     $('#hue').html(lifxState.color.hue.toFixed(3));
     $('#lifxbrightness').html(lifxState.brightness.toFixed(2));
+    $('#lifxlocation').html(lifxState.location.name);
     if (lifxState.power === "on") {
     console.log('modeon')
       $('#state').addClass('modeOn')
